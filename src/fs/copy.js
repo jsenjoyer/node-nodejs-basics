@@ -1,9 +1,16 @@
 import fs from 'fs/promises';
 import {join} from 'path';
-import {__dirname} from "../utils/index.js";
+
+import {dirname} from 'path';
+import {fileURLToPath} from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 
 const copy = async () => {
     const PATH_TO_FILES_FOLDER = join(__dirname, 'files')
+    console.log(PATH_TO_FILES_FOLDER)
     const PATH_TO_FILES_COPY_FOLDER = join(__dirname, 'files_copy')
 
     try {
