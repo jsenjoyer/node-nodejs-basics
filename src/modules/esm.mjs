@@ -1,16 +1,17 @@
-import path from 'path'
+import path, {dirname} from 'path'
 import {release, version} from 'os'
 import {createServer as createServerHttp} from 'http'
 import * as fi from './files/c.js';
-import {__dirname} from "../utils/index.js";
 import {fileURLToPath} from "url";
 import {createRequire} from 'module'
 const require = createRequire(import.meta.url);
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+
 
 const random = Math.random();
-const __filename = fileURLToPath(import.meta.url);
-
 
 let unknownObject;
 if (random > 0.5) {

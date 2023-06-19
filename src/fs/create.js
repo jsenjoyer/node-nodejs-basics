@@ -1,8 +1,12 @@
 import fs from 'fs/promises';
+import {dirname, join} from 'path';
+import {fileURLToPath} from "url";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const PATH_TO_FILE = join(__dirname, './files/fresh.txt');
+const FILE_EXIST_ERR = 'FILE_EXIST';
 const create = async () => {
-    const PATH_TO_FILE = './files/fresh.txt';
-    const FILE_EXIST_ERR = 'FILE_EXIST';
 
     try {
         await fs.access(PATH_TO_FILE);
